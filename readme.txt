@@ -6,3 +6,4 @@ Creating a new branch is quick and simple.
 
 Creating a new branch is quick.
 add 1.
+add 2.
