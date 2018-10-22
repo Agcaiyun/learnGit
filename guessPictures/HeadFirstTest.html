@@ -14,11 +14,10 @@
         <img id="two" src="./images/twoblur.jpg" />
         <img id="three" src="./images/threeblur.jpg" />
         <img id="five" src="./images/fiveblur.jpg" />
-
-
     </div>
     <script>
         window.onload = init
+
         function init() {
             let images = document.getElementsByTagName('img')
 
@@ -36,7 +35,6 @@
         }
 
         function reBlur(clickedImg) {
-
             clickedImg.setAttribute("src", `./images/${clickedImg.id}blur.jpg`)
         }
     </script>
