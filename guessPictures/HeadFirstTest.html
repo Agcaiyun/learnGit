@@ -29,11 +29,15 @@
         }
 
         function changeImage(e) {
-            let clickedId = e.target.id
-            let clickedImg = document.getElementById(clickedId)
+            let clickedImg = e.target
 
-            // clickedImg.src = `./images/${clickedId}.jpg`
-            clickedImg.setAttribute("src", `./images/${clickedId}.jpg`)
+            clickedImg.setAttribute("src", `./images/${clickedImg.id}.jpg`)
+            setTimeout(reBlur, 2000, clickedImg)
+        }
+
+        function reBlur(clickedImg) {
+
+            clickedImg.setAttribute("src", `./images/${clickedImg.id}blur.jpg`)
         }
     </script>
 </body>
