@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <img id="zero" src="./images/zeroblur.jpg" />
+        <img id="two" src="./images/twoblur.jpg" />
+        <img id="three" src="./images/threeblur.jpg" />
+        <img id="five" src="./images/fiveblur.jpg" />
+
+
+    </div>
+    <script>
+        window.onload = init
+        function init() {
+            let images = document.getElementsByTagName('img')
+
+            for (let index = 0; index < images.length; index++) {
+                images[index].onclick = changeImage
+            }
+
+        }
+
+        function changeImage(e) {
+            let clickedId = e.target.id
+            let clickedImg = document.getElementById(clickedId)
+
+            // clickedImg.src = `./images/${clickedId}.jpg`
+            clickedImg.setAttribute("src", `./images/${clickedId}.jpg`)
+        }
+    </script>
+</body>
+
+</html>
