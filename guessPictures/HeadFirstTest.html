@@ -22,20 +22,18 @@
             let images = document.getElementsByTagName('img')
 
             for (let index = 0; index < images.length; index++) {
-                images[index].onclick = changeImage
+                images[index].onmouseover = changeImage
+                images[index].onmouseout = reBlur
             }
 
         }
 
         function changeImage(e) {
-            let clickedImg = e.target
-
-            clickedImg.setAttribute("src", `./images/${clickedImg.id}.jpg`)
-            setTimeout(reBlur, 2000, clickedImg)
+            e.target.setAttribute("src", `./images/${e.target.id}.jpg`)
         }
 
-        function reBlur(clickedImg) {
-            clickedImg.setAttribute("src", `./images/${clickedImg.id}blur.jpg`)
+        function reBlur(e) {
+            e.target.setAttribute("src", `./images/${e.target.id}blur.jpg`)
         }
     </script>
 </body>
