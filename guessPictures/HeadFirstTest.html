@@ -6,35 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body,
+        button {
+            margin: 10px;
+        }
+
+        div {
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <div>
-        <img id="zero" src="./images/zeroblur.jpg" />
-        <img id="two" src="./images/twoblur.jpg" />
-        <img id="three" src="./images/threeblur.jpg" />
-        <img id="five" src="./images/fiveblur.jpg" />
+        <button id="clickMe">click me</button>
+        <div id="message"></div>
     </div>
     <script>
         window.onload = init
 
         function init() {
-            let images = document.getElementsByTagName('img')
+            let clickBtn = document.getElementById('clickMe')
+            let message = document.getElementById('message')
 
-            for (let index = 0; index < images.length; index++) {
-                images[index].onmouseover = changeImage
-                images[index].onmouseout = reBlur
+            let count = 0
+            clickBtn.onclick = showMessage
+
+            function showMessage() {
+                count++
+                message.innerHTML = `You clicked me ${count} times`
             }
-
         }
 
-        function changeImage(e) {
-            e.target.setAttribute("src", `./images/${e.target.id}.jpg`)
-        }
-
-        function reBlur(e) {
-            e.target.setAttribute("src", `./images/${e.target.id}blur.jpg`)
-        }
     </script>
 </body>
 
